@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
   get  'welcom' => 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :articles , param: :id
+  root to: 'articles#index'
+  #get '/articles/:id', to: 'articles#show', as: 'article'
+
+ # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
