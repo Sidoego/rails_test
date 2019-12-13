@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'bootstrap', '~> 4.4.1'
+gem 'bootstrap', '~> 4.3.1'
 
 gem 'jquery-rails'
 
@@ -64,6 +64,6 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-gem 'therubyracer'
+gem 'mini_racer'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
