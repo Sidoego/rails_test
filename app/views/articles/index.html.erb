@@ -4,21 +4,17 @@
 <div class="col-sm-4 offset-4">
 
 <%i=0%>
+<div class="accordion" id="accordionExample">
+
 <% @articles.each do |article| %>
 
-<div class="accordion" id="accordionExample<%=article.id%>">
   <div class="card">
-    <div class="card-header" id="headingOne<%=article.id%>">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne<%=article.id%>" aria-expanded="<%=i==0%>" aria-controls="collapseOne<%=article.id%>">
+    <button class="card-header btn btn-light" id="heading<%=article.id%>" type="button" data-toggle="collapse" data-target="#collapse<%=article.id%>" aria-expanded="<%=i==0%>" aria-controls="collapse<%=article.id%>">
           <%= "#{article.title.capitalize}" %>
-        </button>
-      </h2>
-    </div>
-
-    <div id="collapseOne<%=article.id%>" class="collapse <%=i==0 ? 'show' : ''%>" aria-labelledby="headingOne<%=article.id%>" data-parent="#accordionExample<%=article.id%>">
+    </button>
+    <div id="collapse<%=article.id%>" class="collapse <%=i==0 ? 'show' : ''%>" aria-labelledby="heading<%=article.id%>" data-parent="#accordionExample">
       <div class="card-body">
-        <h5 class="card-title"><%= "#{article.title.capitalize}" %></h5>
+        <h5 class="card-title" ><%=link_to "#{article.title.capitalize}", article_path(article) , {style: "color: black"}%></h5>
         <p class="card-text"><%= article.description %></p>
       </div>
       <div class="card-footer bg-transparent border-light center">
@@ -30,15 +26,14 @@
       </div>
     </div>
   </div>
-</div>
-<%i=1%>
+  <%i=1%>
   <%end%>
-
+  <div class="card">
+    <button class="btn btn-info">
+          <%= "Create new article" %>
+    </button>
+</div>
 
 
 </div>
-<div class = 'mt10 center'>
-<%= button_to "Create new article", new_article_path, { method:'get', class: 'btn btn-secondary'} %>
-
-
 </div>

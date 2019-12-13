@@ -1,18 +1,19 @@
-<h1>Show article</h1>
+<h1 class="col-md-4 offset-md-4 center mt10">Show article</h1>
 
-<p>
 
-<%= @article.title %></br>
-<%= @article.description %></br>
-<%= @article.created_at %></br>
-<%= @article.updated_at %>
 
-</p>
+  <div class="card">
+    <div class="card-header">
+      <%= @article.title %>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= @article.description %></h5>
+      <p class="card-text">Created: <%= @article.created_at %> / Updated: <%= @article.updated_at %></p>
+      <div class="btn-group " role="group" aria-label="Basic example">
 
-<p>
-  <%= link_to "Edit", edit_article_path(@article) %>
-  <%= link_to "Back", articles_path %>
-
-</p>
-
-<p>
+      <%= button_to "List", articles_path, {method: 'get', class: 'btn btn-outline-success ', style:"width: 100px" }%>
+      <%= button_to "Edit", edit_article_path(:id =>@article.id), {method: 'get', class: 'btn btn-outline-warning ', style:"width: 100px" }%>
+      <%= button_to "Delete", article_path(:id =>@article.id), {method: 'delete', data: { confirm: "Are you sure?" }, class: 'btn btn-outline-danger', style:"width: 100px"} %>
+    </div>
+    </div>
+      </div>

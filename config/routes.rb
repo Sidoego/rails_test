@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :models
+  resources :users
   get  'welcom' => 'pages#home'
   resources :articles , param: :id
   root to: 'pages#home'
