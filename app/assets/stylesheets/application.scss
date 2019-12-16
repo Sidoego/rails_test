@@ -112,3 +112,14 @@ float: left;
 margin-left: 15px;
 
 }
+
+
+#notice_wrapper{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  text-align: center;
+  margin: 0;
+  opacity: 0.5;
+}

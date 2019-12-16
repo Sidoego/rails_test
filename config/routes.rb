@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :models
+  devise_for :users
   resources :users
   get  'welcom' => 'pages#home'
   resources :articles , param: :id

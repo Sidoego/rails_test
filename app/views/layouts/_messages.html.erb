@@ -1,9 +1,21 @@
+<div id="notice_wrapper">
+<div class="container">
+
 <% flash.each do |name, msg| %>
-
-<ul>
-
-<li><%= msg %></li>
-
-</ul>
-
+    <div class="alert alert-warninga">
+      <li><%= msg %></li>
+    </div>
 <% end %>
+
+</div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('#notice_wrapper').fadeOut("slow", function() {
+
+      })
+    }, 2500);
+  });
+</script>
