@@ -42,6 +42,10 @@ gem 'bootstrap', '~> 4.4.1'
 
 gem 'jquery-rails'
 
+gem 'kaminari'
+
+
+
 
 
 group :development, :test do

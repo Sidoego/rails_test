@@ -1,0 +1,7 @@
+<h1 class="mt10" align="center">You are searching: <%=params[:search_text]%></h1>
+
+<%if @articles.nil?%>
+  <%=render 'empty'%>
+<%else%>
+  <%=render 'search'%>
+<%end%>

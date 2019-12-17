@@ -1,19 +1,16 @@
-<h1 class="col-md-4 offset-md-4 center mt10">Article:  <%=  @article.title %></h1>
-
-
-
-  <div class="card">
-    <div class="card-header">
-  Artilce text
+<h1 class="col-md-8 offset-md-2 center mt10">Article:  <%=  @article.title %></h1>
+<div class="card">
+  <div class="card-header">
+    Artilce text
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @article.description %></h5>
+    <p class="card-text">Created: <%= @article.created_at %> / Updated: <%= @article.updated_at %></p>
+<div class='col-md-4 offset-4'>
+    <div class="btn-group" role="group" >
+        <%= button_to "List", articles_path, {method: 'get', class: 'btn btn-success ', style:"width: 100px; margin: 2px" }%>
+        <%= button_to "Edit", edit_article_path(:id =>@article.id), {method: 'get', class: 'btn btn-warning ', style:"width: 100px; margin: 2px" }%>
+        <%= button_to "Delete", article_path(:id =>@article.id), {method: 'delete', data: { confirm: "Are you sure?" }, class: 'btn btn-danger', style:"width: 100px; margin: 2px"} %>
     </div>
-    <div class="card-body">
-      <h5 class="card-title"><%= @article.description %></h5>
-      <p class="card-text">Created: <%= @article.created_at %> / Updated: <%= @article.updated_at %></p>
-      <div class="btn-group" role="group" aria-label="Basic example">
-
-      <%= button_to "List", articles_path, {method: 'get', class: 'btn btn-success ', style:"width: 100px" }%>
-      <%= button_to "Edit", edit_article_path(:id =>@article.id), {method: 'get', class: 'btn btn-warning ', style:"width: 100px" }%>
-      <%= button_to "Delete", article_path(:id =>@article.id), {method: 'delete', data: { confirm: "Are you sure?" }, class: 'btn btn-danger', style:"width: 100px"} %>
-    </div>
-    </div>
-      </div>
+  </div>
+</div>
